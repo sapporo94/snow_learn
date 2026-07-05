@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Integration diagram</title>
+  <desc id="desc">Connected systems exchanging data through ServiceNow.</desc>
+  <rect width="960" height="540" rx="32" fill="#061a14"/>
+  <rect x="110" y="164" width="170" height="120" rx="24" fill="rgba(98,216,78,0.08)" stroke="#62d84e" stroke-width="4"/>
+  <rect x="365" y="128" width="230" height="194" rx="28" fill="rgba(86,199,255,0.08)" stroke="#56c7ff" stroke-width="4"/>
+  <rect x="680" y="164" width="170" height="120" rx="24" fill="rgba(157,255,122,0.08)" stroke="#9dff7a" stroke-width="4"/>
+  <path d="M280 224h82" stroke="#eafff6" stroke-width="6" stroke-linecap="round"/>
+  <path d="M600 224h82" stroke="#eafff6" stroke-width="6" stroke-linecap="round"/>
+  <path d="M330 192l32 32-32 32" fill="none" stroke="#eafff6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M630 192l32 32-32 32" fill="none" stroke="#eafff6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="148" y="222" fill="#eafff6" font-family="Arial, sans-serif" font-size="24" font-weight="700">Source</text>
+  <text x="405" y="208" fill="#eafff6" font-family="Arial, sans-serif" font-size="24" font-weight="700">ServiceNow</text>
+  <text x="730" y="222" fill="#eafff6" font-family="Arial, sans-serif" font-size="24" font-weight="700">Target</text>
+  <text x="120" y="90" fill="#9dff7a" font-family="Arial, sans-serif" font-size="28" font-weight="700">REST, SOAP, Import Set, MID</text>
+  <text x="120" y="444" fill="#a9c9bd" font-family="Arial, sans-serif" font-size="22">Move data with secure transport and clear error handling</text>
+</svg>

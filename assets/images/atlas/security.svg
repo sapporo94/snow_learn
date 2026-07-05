@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Security and ACL diagram</title>
+  <desc id="desc">A shield, locked records, and rule checks for access control.</desc>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#62d84e"/>
+      <stop offset="100%" stop-color="#56c7ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" rx="32" fill="#061a14"/>
+  <circle cx="180" cy="120" r="140" fill="rgba(98,216,78,0.12)"/>
+  <circle cx="770" cy="420" r="170" fill="rgba(86,199,255,0.10)"/>
+  <rect x="120" y="130" width="360" height="220" rx="28" fill="#0c2a21" stroke="url(#g)" stroke-width="4"/>
+  <rect x="170" y="180" width="140" height="42" rx="21" fill="#12372c" stroke="#9dff7a" stroke-width="2"/>
+  <rect x="170" y="240" width="240" height="18" rx="9" fill="#2f5649"/>
+  <rect x="170" y="272" width="200" height="18" rx="9" fill="#2f5649"/>
+  <path d="M650 130c42 0 76 34 76 76v24c0 93-52 140-76 162-24-22-76-69-76-162v-24c0-42 34-76 76-76Z" fill="url(#g)" opacity="0.18" stroke="#9dff7a" stroke-width="4"/>
+  <path d="M650 182c17 0 30 13 30 30v26h18v78h-96v-78h18v-26c0-17 13-30 30-30Zm0 16c-8 0-14 6-14 14v26h28v-26c0-8-6-14-14-14Z" fill="#eafff6"/>
+  <text x="120" y="96" fill="#9dff7a" font-family="Arial, sans-serif" font-size="28" font-weight="700">ACL + Security Rules</text>
+  <text x="120" y="384" fill="#a9c9bd" font-family="Arial, sans-serif" font-size="22">Read, write, create, delete, execute</text>
+</svg>

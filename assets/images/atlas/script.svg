@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Script and code diagram</title>
+  <desc id="desc">Reusable code blocks, client scripts, and script includes in a layered view.</desc>
+  <rect width="960" height="540" rx="32" fill="#061a14"/>
+  <rect x="120" y="120" width="720" height="300" rx="30" fill="#0c2a21" stroke="#56c7ff" stroke-width="4"/>
+  <rect x="160" y="160" width="260" height="220" rx="22" fill="rgba(86,199,255,0.10)" stroke="#56c7ff" stroke-width="2"/>
+  <rect x="470" y="160" width="330" height="220" rx="22" fill="rgba(98,216,78,0.10)" stroke="#9dff7a" stroke-width="2"/>
+  <rect x="200" y="210" width="180" height="18" rx="9" fill="#2f5649"/>
+  <rect x="200" y="246" width="150" height="18" rx="9" fill="#2f5649"/>
+  <rect x="200" y="282" width="120" height="18" rx="9" fill="#2f5649"/>
+  <text x="190" y="196" fill="#eafff6" font-family="Arial, sans-serif" font-size="24" font-weight="700">Client</text>
+  <text x="506" y="196" fill="#eafff6" font-family="Arial, sans-serif" font-size="24" font-weight="700">Server / Reusable</text>
+  <path d="M425 240h30" stroke="#eafff6" stroke-width="6" stroke-linecap="round"/>
+  <path d="M430 220l24 20-24 20" fill="none" stroke="#eafff6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="142" y="96" fill="#9dff7a" font-family="Arial, sans-serif" font-size="28" font-weight="700">Script Includes and Client Scripts</text>
+  <text x="142" y="454" fill="#a9c9bd" font-family="Arial, sans-serif" font-size="22">One function, many callers, clear behavior</text>
+</svg>

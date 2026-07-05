@@ -6,6 +6,7 @@
   <title>Topic Atlas | NowSkill ServiceNow Bible</title>
   <meta name="description" content="Learn the core ServiceNow topics and items: ACLs, Business Rules, Script Includes, Flow, CMDB, incidents, changes, and more.">
   <link rel="stylesheet" href="../assets/css/nowskill.css">
+  <link rel="stylesheet" href="../assets/css/atlas.css">
   <script defer src="../assets/js/app.js"></script>
 </head>
 <body>
@@ -22,137 +23,226 @@
     <button class="cmd" data-open-command>⌘K Search</button>
   </div>
   <main id="main" class="page module-page">
-    <section class="module-hero">
-      <div>
-        <p class="eyebrow">◈ Learn by object</p>
+    <section class="atlas-hero">
+      <div class="glass">
+        <p class="atlas-eyebrow">◈ Learn by object</p>
         <h1>Topic Atlas for the whole ServiceNow Bible</h1>
-        <p>Use this page when you want the same learning pattern for any ServiceNow topic: what it is, how it is used, examples, common problems, and the related platform pieces that usually appear with it.</p>
+        <p class="atlas-lead">Use this page when you want the same learning pattern for any ServiceNow topic, but with topic-specific examples, screenshots/diagrams, docs references, and lab steps instead of one generic block reused everywhere.</p>
         <div class="hero-actions">
           <a class="btn primary" href="#atlas">Browse topics</a>
           <a class="btn" href="#study-standard">Study standard</a>
           <a class="btn" href="tables.html">Tables Atlas</a>
         </div>
+        <div class="atlas-mini">
+          <div><b>What it is</b><p class="muted">Definition first</p></div>
+          <div><b>How it is used</b><p class="muted">Real platform work</p></div>
+          <div><b>Practice lab</b><p class="muted">Do the task yourself</p></div>
+        </div>
       </div>
-      <aside class="module-stats">
-        <strong>12</strong><span>core topics</span>
-        <strong>1</strong><span>study pattern</span>
-        <strong>Free</strong><span>public learning</span>
-      </aside>
+      <div class="atlas-visual">
+        <img src="../assets/images/atlas/automation.svg" alt="ServiceNow topic atlas illustration showing automation flow">
+      </div>
     </section>
 
     <section class="glass" id="study-standard">
       <h2>How to study any topic</h2>
       <ol>
-        <li>Start with the definition.</li>
-        <li>Look at where it is used in the platform.</li>
-        <li>Inspect a real example and the related table or script.</li>
-        <li>Check the permissions, ACLs, or runtime rules around it.</li>
-        <li>Learn the common failures and the first troubleshooting step.</li>
+        <li>Start with the definition and the business reason it exists.</li>
+        <li>Look at where it is used in the platform and which table, script, or process owns it.</li>
+        <li>Inspect a real example, then open the related record or configuration item.</li>
+        <li>Check the permissions, runtime rules, and logs around it.</li>
+        <li>Use the practice lab to prove you understand the behavior.</li>
       </ol>
+      <p class="atlas-note">Official docs reference: use the <a href="https://docs.servicenow.com/" target="_blank" rel="noreferrer">ServiceNow documentation portal</a> and search for the topic name.</p>
     </section>
 
-    <section class="split" id="atlas">
-      <div class="glass">
-        <h2>Access and security</h2>
-        <h3>ACL</h3>
-        <p>What it is: the rule that decides who can read, write, create, delete, or execute.</p>
-        <p>How it is used: secure tables, fields, scripts, and APIs.</p>
-        <p>Examples: table ACLs, field ACLs, script ACLs.</p>
-        <p>Common problems: admin sees it, but end users do not; a field is locked because a field ACL blocks it.</p>
-      </div>
-      <div class="glass accent">
-        <h2>Automation logic</h2>
-        <h3>Business Rule</h3>
-        <p>What it is: server-side logic that runs before or after database actions.</p>
-        <p>How it is used: update related records, enforce rules, and prepare values.</p>
-        <p>Examples: state changes, approvals, calculated fields.</p>
-        <p>Common problems: recursion, slow scripts, and unexpected updates.</p>
-      </div>
-    </section>
+    <section class="atlas-grid" id="atlas">
+      <article class="atlas-card">
+        <div class="atlas-row">
+          <div class="atlas-shot"><img src="../assets/images/atlas/security.svg" alt="ACL and security diagram"></div>
+          <div>
+            <p class="atlas-eyebrow">Access and security</p>
+            <h2>ACL</h2>
+            <p>What it is: the rule that decides who can read, write, create, delete, or execute.</p>
+            <p>How it is used: secure tables, fields, scripts, and APIs.</p>
+            <p>Where to look: <code>sys_security_acl</code>, Security Debugger, impersonation, and the field or table being blocked.</p>
+            <p>Examples: table ACLs, field ACLs, script ACLs.</p>
+            <p>Common problems: admin can see it, end users cannot; a field is locked because a field ACL blocks it; inherited ACLs hide the real rule.</p>
+            <p>Practice lab: impersonate a non-admin user, open <code>incident</code>, and trace why the caller or assignment group field is hidden or read-only.</p>
+            <p class="atlas-note">Docs: <a href="https://docs.servicenow.com/" target="_blank" rel="noreferrer">Official docs portal</a> and search for ACL and contextual security.</p>
+          </div>
+        </div>
+      </article>
 
-    <section class="split">
-      <div class="glass">
-        <h3>Script Include</h3>
-        <p>What it is: reusable server-side JavaScript.</p>
-        <p>How it is used: shared logic for GlideAjax, business rules, and flows.</p>
-        <p>Examples: validation helpers, API wrappers, lookup utilities.</p>
-        <p>Common problems: scope mismatch, missing client-callable flag, or bad inheritance.</p>
-      </div>
-      <div class="glass">
-        <h3>Client Script</h3>
-        <p>What it is: browser-side script that responds to form events.</p>
-        <p>How it is used: set defaults, show messages, react to field changes.</p>
-        <p>Examples: onLoad, onChange, onSubmit patterns.</p>
-        <p>Common problems: timing issues, unsupported APIs, and duplicate logic with UI Policies.</p>
-      </div>
-    </section>
+      <article class="atlas-card">
+        <div class="atlas-row">
+          <div class="atlas-shot"><img src="../assets/images/atlas/automation.svg" alt="Business rule and automation diagram"></div>
+          <div>
+            <p class="atlas-eyebrow">Automation logic</p>
+            <h2>Business Rule</h2>
+            <p>What it is: server-side logic that runs before or after database actions.</p>
+            <p>How it is used: update related records, enforce rules, set default values, and log business decisions.</p>
+            <p>Where to look: the table's Business Rules related list, <code>sys_script</code>, and the system logs when the rule executes.</p>
+            <p>Examples: state changes, approvals, calculated fields, audit messages.</p>
+            <p>Common problems: recursion, slow scripts, using the wrong timing, or updating records in a loop.</p>
+            <p>Practice lab: add a before rule to <code>incident</code> that blocks closure without a close code, then verify the message in the form.</p>
+            <p class="atlas-note">Docs: search the docs portal for Business Rules and server-side scripting.</p>
+          </div>
+        </div>
+      </article>
 
-    <section class="split">
-      <div class="glass">
-        <h3>Flow</h3>
-        <p>What it is: declarative automation for tasks and approvals.</p>
-        <p>How it is used: trigger work from records, approvals, and integrations.</p>
-        <p>Examples: incident routing, request fulfillment, notifications.</p>
-        <p>Common problems: trigger conditions, permissions, and duplicate actions.</p>
-      </div>
-      <div class="glass">
-        <h3>CMDB CI</h3>
-        <p>What it is: a configuration item record that represents an asset, service, or technical component.</p>
-        <p>How it is used: service maps, dependency chains, impact analysis, and governance.</p>
-        <p>Examples: servers, apps, databases, services, business services.</p>
-        <p>Common problems: bad identification, duplicate CIs, weak class hierarchy.</p>
-      </div>
-    </section>
+      <article class="atlas-card">
+        <div class="atlas-row">
+          <div class="atlas-shot"><img src="../assets/images/atlas/script.svg" alt="Script include and client script diagram"></div>
+          <div>
+            <p class="atlas-eyebrow">Reusable code</p>
+            <h2>Script Include</h2>
+            <p>What it is: reusable server-side JavaScript.</p>
+            <p>How it is used: shared logic for GlideAjax, business rules, flows, and validation helpers.</p>
+            <p>Where to look: <code>sys_script_include</code>, the app scope, and whether the include is client-callable.</p>
+            <p>Examples: validators, lookups, API wrappers, helper methods.</p>
+            <p>Common problems: scope mismatch, missing client-callable flag, bad inheritance, or calling server-only code from the browser.</p>
+            <p>Practice lab: create a Script Include that returns the current user's manager and call it from a simple GlideAjax client script.</p>
+            <p class="atlas-note">Docs: search the docs portal for Script Include, GlideAjax, and scoped application scripting.</p>
+          </div>
+        </div>
+      </article>
 
-    <section class="split">
-      <div class="glass">
-        <h3>Incident</h3>
-        <p>What it is: a record for restoring service quickly after an interruption or degradation.</p>
-        <p>How it is used: service desk intake, assignment, SLA tracking, communication, closure.</p>
-        <p>Examples: broken email, VPN outage, application failure.</p>
-        <p>Common problems: poor categorization, missing assignment, weak closure codes.</p>
-      </div>
-      <div class="glass accent">
-        <h3>Change Request</h3>
-        <p>What it is: a controlled record for planned service change.</p>
-        <p>How it is used: approvals, scheduling, risk assessment, implementation, and review.</p>
-        <p>Examples: server patching, app deployment, firewall change.</p>
-        <p>Common problems: weak risk data, missing backout plan, or poor scheduling.</p>
-      </div>
-    </section>
+      <article class="atlas-card">
+        <div class="atlas-row">
+          <div class="atlas-shot"><img src="../assets/images/atlas/automation.svg" alt="Flow automation diagram"></div>
+          <div>
+            <p class="atlas-eyebrow">Automation builder</p>
+            <h2>Flow</h2>
+            <p>What it is: declarative automation for tasks and approvals.</p>
+            <p>How it is used: trigger work from records, approvals, notifications, and integrations without writing the whole process in script.</p>
+            <p>Where to look: Flow Designer, flow execution details, and the record that triggered the flow.</p>
+            <p>Examples: incident routing, request fulfillment, approval chains, notification steps.</p>
+            <p>Common problems: trigger conditions that never fire, missing permissions, duplicated actions, and unclear rollback behavior.</p>
+            <p>Practice lab: build a flow on <code>incident</code> that assigns the record to a support group when priority is 1.</p>
+            <p class="atlas-note">Docs: search the docs portal for Flow Designer and flow execution.</p>
+          </div>
+        </div>
+      </article>
 
-    <section class="split">
-      <div class="glass">
-        <h3>Catalog Item</h3>
-        <p>What it is: a requestable product or service in the service catalog.</p>
-        <p>How it is used: self-service requests, fulfillment, approvals, orchestration.</p>
-        <p>Examples: laptop request, software request, access request.</p>
-        <p>Common problems: bad form design, unclear fulfillment mapping, missing approvals.</p>
-      </div>
-      <div class="glass">
-        <h3>Integration</h3>
-        <p>What it is: data exchange between ServiceNow and another system.</p>
-        <p>How it is used: REST, SOAP, IntegrationHub, webhooks, imports, outbound notifications.</p>
-        <p>Examples: HR feed, CMDB sync, monitoring events, ticket sync.</p>
-        <p>Common problems: authentication, payload mapping, retries, and error handling.</p>
-      </div>
-    </section>
+      <article class="atlas-card">
+        <div class="atlas-row">
+          <div class="atlas-shot"><img src="../assets/images/atlas/data.svg" alt="CMDB and table data diagram"></div>
+          <div>
+            <p class="atlas-eyebrow">Configuration data</p>
+            <h2>CMDB CI</h2>
+            <p>What it is: a configuration item record that represents an asset, service, or technical component.</p>
+            <p>How it is used: service maps, dependency chains, impact analysis, governance, and discovery reconciliation.</p>
+            <p>Where to look: <code>cmdb_ci</code>, CI class hierarchy, relationships, and the IRE or discovery results.</p>
+            <p>Examples: servers, apps, databases, services, business services.</p>
+            <p>Common problems: bad identification, duplicate CIs, weak class hierarchy, and relationship noise.</p>
+            <p>Practice lab: open a CI record, trace its parent class, and identify the relationship used by a dependent service.</p>
+            <p class="atlas-note">Docs: search the docs portal for CMDB, CSDM, and Identification and Reconciliation Engine.</p>
+          </div>
+        </div>
+      </article>
 
-    <section class="split">
-      <div class="glass">
-        <h3>Knowledge Article</h3>
-        <p>What it is: documented solution or reference content for users and agents.</p>
-        <p>How it is used: deflection, self-service, agent assist, and support consistency.</p>
-        <p>Examples: reset password article, incident troubleshooting guide.</p>
-        <p>Common problems: outdated content, poor taxonomy, and visibility issues.</p>
-      </div>
-      <div class="glass">
-        <h3>MID Server</h3>
-        <p>What it is: the bridge between ServiceNow and local network resources.</p>
-        <p>How it is used: discovery, orchestration, integrations, and secure on-prem communication.</p>
-        <p>Examples: discovery probes, database connections, credentialed access.</p>
-        <p>Common problems: firewall rules, certificates, credentials, and agent health.</p>
-      </div>
+      <article class="atlas-card">
+        <div class="atlas-row">
+          <div class="atlas-shot"><img src="../assets/images/atlas/operations.svg" alt="Incident operations diagram"></div>
+          <div>
+            <p class="atlas-eyebrow">Service operations</p>
+            <h2>Incident</h2>
+            <p>What it is: a record for restoring service quickly after an interruption or degradation.</p>
+            <p>How it is used: service desk intake, assignment, SLA tracking, communication, and closure.</p>
+            <p>Where to look: <code>incident</code>, assignment rules, SLA definitions, and the state model on the form.</p>
+            <p>Examples: broken email, VPN outage, application failure.</p>
+            <p>Common problems: poor categorization, missing assignment, weak closure codes, and untracked communications.</p>
+            <p>Practice lab: create a high-priority incident, move it through assignment, SLA update, and closure, then review the work notes.</p>
+            <p class="atlas-note">Docs: search the docs portal for Incident management and service desk workflows.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="atlas-card">
+        <div class="atlas-row">
+          <div class="atlas-shot"><img src="../assets/images/atlas/operations.svg" alt="Change request workflow diagram"></div>
+          <div>
+            <p class="atlas-eyebrow">Controlled change</p>
+            <h2>Change Request</h2>
+            <p>What it is: a controlled record for planned service change.</p>
+            <p>How it is used: approvals, scheduling, risk assessment, implementation, and review.</p>
+            <p>Where to look: <code>change_request</code>, change models, CAB approvals, and the change calendar.</p>
+            <p>Examples: server patching, app deployment, firewall change.</p>
+            <p>Common problems: weak risk data, missing backout plan, and bad scheduling windows.</p>
+            <p>Practice lab: open a normal change, add risk, route it for approval, and check how the task list reflects the lifecycle.</p>
+            <p class="atlas-note">Docs: search the docs portal for Change management, approvals, and change calendar.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="atlas-card">
+        <div class="atlas-row">
+          <div class="atlas-shot"><img src="../assets/images/atlas/operations.svg" alt="Catalog request workflow diagram"></div>
+          <div>
+            <p class="atlas-eyebrow">Self-service</p>
+            <h2>Catalog Item</h2>
+            <p>What it is: a requestable product or service in the service catalog.</p>
+            <p>How it is used: self-service requests, fulfillment, approvals, and orchestration.</p>
+            <p>Where to look: <code>sc_cat_item</code>, variables, catalog tasks, and the flow or workflow that fulfills the item.</p>
+            <p>Examples: laptop request, software request, access request.</p>
+            <p>Common problems: bad form design, unclear fulfillment mapping, missing approvals, and poor variable naming.</p>
+            <p>Practice lab: create a single-variable catalog item and route it to a task so you can see the end-to-end request flow.</p>
+            <p class="atlas-note">Docs: search the docs portal for Service Catalog, catalog items, and variables.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="atlas-card">
+        <div class="atlas-row">
+          <div class="atlas-shot"><img src="../assets/images/atlas/integration.svg" alt="Integration diagram"></div>
+          <div>
+            <p class="atlas-eyebrow">System to system</p>
+            <h2>Integration</h2>
+            <p>What it is: data exchange between ServiceNow and another system.</p>
+            <p>How it is used: REST, SOAP, IntegrationHub, webhooks, imports, and outbound notifications.</p>
+            <p>Where to look: REST Message records, import sets, ECC Queue, integration logs, and the script or flow that sends the payload.</p>
+            <p>Examples: HR feed, CMDB sync, monitoring events, ticket sync.</p>
+            <p>Common problems: authentication, payload mapping, retries, bad transformations, and missing error handling.</p>
+            <p>Practice lab: trace one outbound REST call from its script/flow to its response log and identify the payload fields.</p>
+            <p class="atlas-note">Docs: search the docs portal for REST API, IntegrationHub, and import set processing.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="atlas-card">
+        <div class="atlas-row">
+          <div class="atlas-shot"><img src="../assets/images/atlas/operations.svg" alt="Knowledge article workflow diagram"></div>
+          <div>
+            <p class="atlas-eyebrow">Support knowledge</p>
+            <h2>Knowledge Article</h2>
+            <p>What it is: documented solution or reference content for users and agents.</p>
+            <p>How it is used: deflection, self-service, agent assist, and support consistency.</p>
+            <p>Where to look: <code>kb_knowledge</code>, the knowledge base, article workflow, and visibility rules.</p>
+            <p>Examples: reset password article, incident troubleshooting guide.</p>
+            <p>Common problems: outdated content, poor taxonomy, and visibility issues.</p>
+            <p>Practice lab: publish a short article, search for it as a user, and verify that the right role can see it.</p>
+            <p class="atlas-note">Docs: search the docs portal for Knowledge management and article workflow.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="atlas-card">
+        <div class="atlas-row">
+          <div class="atlas-shot"><img src="../assets/images/atlas/integration.svg" alt="MID Server and network bridge diagram"></div>
+          <div>
+            <p class="atlas-eyebrow">On-prem bridge</p>
+            <h2>MID Server</h2>
+            <p>What it is: the bridge between ServiceNow and local network resources.</p>
+            <p>How it is used: discovery, orchestration, integrations, and secure on-prem communication.</p>
+            <p>Where to look: MID Server status, <code>ecc_queue</code>, discovery logs, credentials, and network connectivity.</p>
+            <p>Examples: discovery probes, database connections, credentialed access.</p>
+            <p>Common problems: firewall rules, certificates, credentials, queued messages, and agent health.</p>
+            <p>Practice lab: check one ECC Queue item and trace it to the MID Server that should process it.</p>
+            <p class="atlas-note">Docs: search the docs portal for MID Server, ECC Queue, and discovery troubleshooting.</p>
+          </div>
+        </div>
+      </article>
     </section>
 
     <section class="glass">

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Data and table diagram</title>
+  <desc id="desc">A table hierarchy and field layout for understanding records and dictionary entries.</desc>
+  <rect width="960" height="540" rx="32" fill="#061a14"/>
+  <rect x="86" y="104" width="788" height="324" rx="28" fill="#0c2a21" stroke="#9dff7a" stroke-width="4"/>
+  <rect x="120" y="140" width="712" height="52" rx="14" fill="#12372c"/>
+  <rect x="120" y="220" width="220" height="166" rx="18" fill="rgba(98,216,78,0.10)" stroke="#62d84e" stroke-width="2"/>
+  <rect x="360" y="220" width="220" height="166" rx="18" fill="rgba(86,199,255,0.10)" stroke="#56c7ff" stroke-width="2"/>
+  <rect x="600" y="220" width="232" height="166" rx="18" fill="rgba(157,255,122,0.10)" stroke="#9dff7a" stroke-width="2"/>
+  <path d="M260 388v52" stroke="#2f5649" stroke-width="4"/>
+  <path d="M472 388v52" stroke="#2f5649" stroke-width="4"/>
+  <path d="M716 388v52" stroke="#2f5649" stroke-width="4"/>
+  <text x="120" y="90" fill="#9dff7a" font-family="Arial, sans-serif" font-size="28" font-weight="700">Table hierarchy and dictionary</text>
+  <text x="124" y="174" fill="#eafff6" font-family="Arial, sans-serif" font-size="22">Parent table</text>
+  <text x="124" y="250" fill="#a9c9bd" font-family="Arial, sans-serif" font-size="20">Fields</text>
+  <text x="364" y="250" fill="#a9c9bd" font-family="Arial, sans-serif" font-size="20">References</text>
+  <text x="604" y="250" fill="#a9c9bd" font-family="Arial, sans-serif" font-size="20">ACLs</text>
+  <text x="120" y="476" fill="#a9c9bd" font-family="Arial, sans-serif" font-size="22">Example: incident extends task, then adds its own fields</text>
+</svg>
