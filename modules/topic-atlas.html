@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Topic Atlas | NowSkill ServiceNow Bible</title>
+  <meta name="description" content="Learn the core ServiceNow topics and items: ACLs, Business Rules, Script Includes, Flow, CMDB, incidents, changes, and more.">
+  <link rel="stylesheet" href="../assets/css/nowskill.css">
+  <script defer src="../assets/js/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="topbar">
+    <a class="brand" href="../index.html"><span class="brand-mark">N</span><span><b>NowSkill</b><small>ServiceNow Bible</small></span></a>
+    <nav class="topnav">
+      <a href="../modules/administration.html">Admin</a>
+      <a href="../modules/developer.html">Developer</a>
+      <a href="../modules/cmdb.html">CMDB</a>
+      <a href="../modules/quick-reference.html">Shortcuts</a>
+      <a href="../modules/bible.html">Bible</a>
+    </nav>
+    <button class="cmd" data-open-command>⌘K Search</button>
+  </div>
+  <main id="main" class="page module-page">
+    <section class="module-hero">
+      <div>
+        <p class="eyebrow">◈ Learn by object</p>
+        <h1>Topic Atlas for the whole ServiceNow Bible</h1>
+        <p>Use this page when you want the same learning pattern for any ServiceNow topic: what it is, how it is used, examples, common problems, and the related platform pieces that usually appear with it.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#atlas">Browse topics</a>
+          <a class="btn" href="#study-standard">Study standard</a>
+          <a class="btn" href="tables.html">Tables Atlas</a>
+        </div>
+      </div>
+      <aside class="module-stats">
+        <strong>12</strong><span>core topics</span>
+        <strong>1</strong><span>study pattern</span>
+        <strong>Free</strong><span>public learning</span>
+      </aside>
+    </section>
+
+    <section class="glass" id="study-standard">
+      <h2>How to study any topic</h2>
+      <ol>
+        <li>Start with the definition.</li>
+        <li>Look at where it is used in the platform.</li>
+        <li>Inspect a real example and the related table or script.</li>
+        <li>Check the permissions, ACLs, or runtime rules around it.</li>
+        <li>Learn the common failures and the first troubleshooting step.</li>
+      </ol>
+    </section>
+
+    <section class="split" id="atlas">
+      <div class="glass">
+        <h2>Access and security</h2>
+        <h3>ACL</h3>
+        <p>What it is: the rule that decides who can read, write, create, delete, or execute.</p>
+        <p>How it is used: secure tables, fields, scripts, and APIs.</p>
+        <p>Examples: table ACLs, field ACLs, script ACLs.</p>
+        <p>Common problems: admin sees it, but end users do not; a field is locked because a field ACL blocks it.</p>
+      </div>
+      <div class="glass accent">
+        <h2>Automation logic</h2>
+        <h3>Business Rule</h3>
+        <p>What it is: server-side logic that runs before or after database actions.</p>
+        <p>How it is used: update related records, enforce rules, and prepare values.</p>
+        <p>Examples: state changes, approvals, calculated fields.</p>
+        <p>Common problems: recursion, slow scripts, and unexpected updates.</p>
+      </div>
+    </section>
+
+    <section class="split">
+      <div class="glass">
+        <h3>Script Include</h3>
+        <p>What it is: reusable server-side JavaScript.</p>
+        <p>How it is used: shared logic for GlideAjax, business rules, and flows.</p>
+        <p>Examples: validation helpers, API wrappers, lookup utilities.</p>
+        <p>Common problems: scope mismatch, missing client-callable flag, or bad inheritance.</p>
+      </div>
+      <div class="glass">
+        <h3>Client Script</h3>
+        <p>What it is: browser-side script that responds to form events.</p>
+        <p>How it is used: set defaults, show messages, react to field changes.</p>
+        <p>Examples: onLoad, onChange, onSubmit patterns.</p>
+        <p>Common problems: timing issues, unsupported APIs, and duplicate logic with UI Policies.</p>
+      </div>
+    </section>
+
+    <section class="split">
+      <div class="glass">
+        <h3>Flow</h3>
+        <p>What it is: declarative automation for tasks and approvals.</p>
+        <p>How it is used: trigger work from records, approvals, and integrations.</p>
+        <p>Examples: incident routing, request fulfillment, notifications.</p>
+        <p>Common problems: trigger conditions, permissions, and duplicate actions.</p>
+      </div>
+      <div class="glass">
+        <h3>CMDB CI</h3>
+        <p>What it is: a configuration item record that represents an asset, service, or technical component.</p>
+        <p>How it is used: service maps, dependency chains, impact analysis, and governance.</p>
+        <p>Examples: servers, apps, databases, services, business services.</p>
+        <p>Common problems: bad identification, duplicate CIs, weak class hierarchy.</p>
+      </div>
+    </section>
+
+    <section class="split">
+      <div class="glass">
+        <h3>Incident</h3>
+        <p>What it is: a record for restoring service quickly after an interruption or degradation.</p>
+        <p>How it is used: service desk intake, assignment, SLA tracking, communication, closure.</p>
+        <p>Examples: broken email, VPN outage, application failure.</p>
+        <p>Common problems: poor categorization, missing assignment, weak closure codes.</p>
+      </div>
+      <div class="glass accent">
+        <h3>Change Request</h3>
+        <p>What it is: a controlled record for planned service change.</p>
+        <p>How it is used: approvals, scheduling, risk assessment, implementation, and review.</p>
+        <p>Examples: server patching, app deployment, firewall change.</p>
+        <p>Common problems: weak risk data, missing backout plan, or poor scheduling.</p>
+      </div>
+    </section>
+
+    <section class="split">
+      <div class="glass">
+        <h3>Catalog Item</h3>
+        <p>What it is: a requestable product or service in the service catalog.</p>
+        <p>How it is used: self-service requests, fulfillment, approvals, orchestration.</p>
+        <p>Examples: laptop request, software request, access request.</p>
+        <p>Common problems: bad form design, unclear fulfillment mapping, missing approvals.</p>
+      </div>
+      <div class="glass">
+        <h3>Integration</h3>
+        <p>What it is: data exchange between ServiceNow and another system.</p>
+        <p>How it is used: REST, SOAP, IntegrationHub, webhooks, imports, outbound notifications.</p>
+        <p>Examples: HR feed, CMDB sync, monitoring events, ticket sync.</p>
+        <p>Common problems: authentication, payload mapping, retries, and error handling.</p>
+      </div>
+    </section>
+
+    <section class="split">
+      <div class="glass">
+        <h3>Knowledge Article</h3>
+        <p>What it is: documented solution or reference content for users and agents.</p>
+        <p>How it is used: deflection, self-service, agent assist, and support consistency.</p>
+        <p>Examples: reset password article, incident troubleshooting guide.</p>
+        <p>Common problems: outdated content, poor taxonomy, and visibility issues.</p>
+      </div>
+      <div class="glass">
+        <h3>MID Server</h3>
+        <p>What it is: the bridge between ServiceNow and local network resources.</p>
+        <p>How it is used: discovery, orchestration, integrations, and secure on-prem communication.</p>
+        <p>Examples: discovery probes, database connections, credentialed access.</p>
+        <p>Common problems: firewall rules, certificates, credentials, and agent health.</p>
+      </div>
+    </section>
+
+    <section class="glass">
+      <h2>Related learning paths</h2>
+      <ul class="big-list">
+        <li><a href="tables.html">Tables Atlas</a> for tables, ACLs, dictionary entries, and table hierarchy.</li>
+        <li><a href="administration.html">Administration Foundation</a> for platform basics and instance anatomy.</li>
+        <li><a href="developer.html">Core Platform Development</a> for scripts, automation, and reusable patterns.</li>
+        <li><a href="itsm.html">ITSM Mastery</a> for incident, problem, change, request, and catalog.</li>
+        <li><a href="cmdb.html">CMDB &amp; CSDM Mastery</a> for CI classes, relationships, and health.</li>
+      </ul>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div><b>NowSkill ServiceNow Bible</b><p>Free, structured, job-ready ServiceNow learning from administrator to developer to architect.</p></div>
+    <div class="footer-links"><a href="../docs/CONTRIBUTING.md">Contribute</a><a href="../docs/GIT_DEPLOY.md">Deploy</a><a href="../references/The_ServiceNow_Bible_v1.0_Master_Manuscript_Volume0_Ch1_Ch7.pdf">Source manuscript</a></div>
+  </footer>
+  <div class="command-panel" data-command-panel hidden>
+    <div class="command-box">
+      <div class="command-head"><b>Search the Bible</b><button data-close-command>×</button></div>
+      <input data-command-input placeholder="Try: ACL, Business Rule, Script Include, Flow, MID Server">
+      <div data-command-results class="command-results"></div>
+    </div>
+  </div>
+</body>
+</html>
