@@ -15,6 +15,10 @@ git push -u origin main
 
 For a static site, enable GitHub Pages from the repository settings and publish from the `main` branch root.
 
+This repository also includes a GitHub Actions workflow at `.github/workflows/pages.yml` so every push to `main` can deploy the site automatically.
+
+If you are turning on Pages for the first time, make sure the repository is set to deploy from GitHub Actions.
+
 ## Future edits
 
 ```bash
