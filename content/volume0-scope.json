@@ -1,0 +1,345 @@
+{
+  "volume": "Volume 0 - Administration Foundation",
+  "chapters": [
+    {
+      "number": "01",
+      "title": "ServiceNow Platform Architecture",
+      "difficulty": "Beginner",
+      "time": "60-90 minutes",
+      "topics": [
+        "cloud workflow platform",
+        "architecture layers",
+        "request lifecycle",
+        "data vs metadata",
+        "platform services"
+      ]
+    },
+    {
+      "number": "02",
+      "title": "ServiceNow Instance Anatomy",
+      "difficulty": "Beginner to Intermediate",
+      "time": "2-3 hours",
+      "topics": [
+        "instances",
+        "environments",
+        "PDI",
+        "releases and upgrades",
+        "cloning",
+        "plugins",
+        "MID Server basics"
+      ]
+    },
+    {
+      "number": "03",
+      "title": "Platform Navigation",
+      "difficulty": "Beginner",
+      "time": "2 hours",
+      "topics": [
+        "Application Navigator",
+        "favorites",
+        "history",
+        "list/form shortcuts",
+        "direct URLs",
+        "Next Experience",
+        "workspace navigation"
+      ]
+    },
+    {
+      "number": "04",
+      "title": "Applications and Scope",
+      "difficulty": "Beginner to Intermediate",
+      "time": "2-3 hours",
+      "topics": [
+        "applications",
+        "scope",
+        "application files",
+        "cross-scope access",
+        "Studio",
+        "App Engine Studio",
+        "source control"
+      ]
+    },
+    {
+      "number": "05",
+      "title": "Tables and Table Hierarchy",
+      "difficulty": "Intermediate",
+      "time": "3-4 hours",
+      "topics": [
+        "base tables",
+        "extended tables",
+        "Task",
+        "custom tables",
+        "CMDB classes",
+        "many-to-many tables",
+        "import set tables"
+      ]
+    },
+    {
+      "number": "06",
+      "title": "Dictionary and Field Architecture",
+      "difficulty": "Intermediate",
+      "time": "3-4 hours",
+      "topics": [
+        "sys_dictionary",
+        "field types",
+        "reference fields",
+        "choice fields",
+        "dictionary overrides",
+        "attributes",
+        "default values",
+        "indexes"
+      ]
+    },
+    {
+      "number": "07",
+      "title": "Forms and Views",
+      "difficulty": "Intermediate",
+      "time": "3 hours",
+      "topics": [
+        "form layout",
+        "form design",
+        "views",
+        "sections",
+        "related lists",
+        "formatters",
+        "UI Policies",
+        "Client Scripts"
+      ]
+    },
+    {
+      "number": "08",
+      "title": "Lists and Filters",
+      "difficulty": "Beginner to Intermediate",
+      "time": "2 hours",
+      "topics": [
+        "list layout",
+        "filters",
+        "breadcrumbs",
+        "encoded queries",
+        "personalized lists",
+        "list edit",
+        "export controls"
+      ]
+    },
+    {
+      "number": "09",
+      "title": "Users, Groups and Roles",
+      "difficulty": "Beginner to Intermediate",
+      "time": "3 hours",
+      "topics": [
+        "sys_user",
+        "groups",
+        "memberships",
+        "role inheritance",
+        "delegation",
+        "impersonation",
+        "personas"
+      ]
+    },
+    {
+      "number": "10",
+      "title": "Security and ACLs",
+      "difficulty": "Intermediate",
+      "time": "4-6 hours",
+      "topics": [
+        "ACL operations",
+        "table ACLs",
+        "field ACLs",
+        "condition vs script",
+        "roles",
+        "security debugging",
+        "data separation"
+      ]
+    },
+    {
+      "number": "11",
+      "title": "Update Sets",
+      "difficulty": "Beginner to Intermediate",
+      "time": "3 hours",
+      "topics": [
+        "local update sets",
+        "customer updates",
+        "preview",
+        "commit",
+        "backout",
+        "collisions",
+        "skipped records"
+      ]
+    },
+    {
+      "number": "12",
+      "title": "Import Sets and Transform Maps",
+      "difficulty": "Intermediate",
+      "time": "4 hours",
+      "topics": [
+        "staging tables",
+        "transform maps",
+        "coalesce",
+        "field maps",
+        "transform scripts",
+        "data quality",
+        "error handling"
+      ]
+    },
+    {
+      "number": "13",
+      "title": "Scheduled Jobs",
+      "difficulty": "Intermediate",
+      "time": "2 hours",
+      "topics": [
+        "scheduled script executions",
+        "scheduled imports",
+        "flow schedules",
+        "run-as user",
+        "time zones",
+        "performance windows"
+      ]
+    },
+    {
+      "number": "14",
+      "title": "Events and Notifications",
+      "difficulty": "Intermediate",
+      "time": "3 hours",
+      "topics": [
+        "event registry",
+        "event queue",
+        "notifications",
+        "mail scripts",
+        "templates",
+        "inbound email",
+        "sys_email"
+      ]
+    },
+    {
+      "number": "15",
+      "title": "System Properties",
+      "difficulty": "Intermediate",
+      "time": "2 hours",
+      "topics": [
+        "sys_properties",
+        "feature flags",
+        "environment values",
+        "property categories",
+        "caching",
+        "safe fallbacks"
+      ]
+    },
+    {
+      "number": "16",
+      "title": "Reporting and Dashboards",
+      "difficulty": "Beginner to Intermediate",
+      "time": "3 hours",
+      "topics": [
+        "reports",
+        "dashboards",
+        "sharing",
+        "drilldowns",
+        "PA basics",
+        "data quality",
+        "security"
+      ]
+    },
+    {
+      "number": "17",
+      "title": "Background Scripts",
+      "difficulty": "Intermediate",
+      "time": "2 hours",
+      "topics": [
+        "scripts - background",
+        "fix scripts",
+        "safe queries",
+        "limits",
+        "rollback evidence",
+        "prod restrictions"
+      ]
+    },
+    {
+      "number": "18",
+      "title": "Logging and Diagnostics",
+      "difficulty": "Intermediate",
+      "time": "3 hours",
+      "topics": [
+        "system logs",
+        "transaction logs",
+        "script logs",
+        "debug tools",
+        "flow contexts",
+        "email logs",
+        "ECC queue"
+      ]
+    },
+    {
+      "number": "19",
+      "title": "Plugins",
+      "difficulty": "Beginner to Intermediate",
+      "time": "2 hours",
+      "topics": [
+        "plugin activation",
+        "dependencies",
+        "licensing",
+        "demo data",
+        "rollback limits",
+        "governance"
+      ]
+    },
+    {
+      "number": "20",
+      "title": "Instance Management",
+      "difficulty": "Intermediate",
+      "time": "3 hours",
+      "topics": [
+        "clone profiles",
+        "upgrade center",
+        "system diagnostics",
+        "email properties",
+        "integration endpoints",
+        "environment banners"
+      ]
+    },
+    {
+      "number": "21",
+      "title": "Performance Basics",
+      "difficulty": "Intermediate",
+      "time": "3 hours",
+      "topics": [
+        "query efficiency",
+        "indexes",
+        "large tables",
+        "reports",
+        "flows",
+        "scheduled jobs",
+        "transaction timing"
+      ]
+    },
+    {
+      "number": "22",
+      "title": "Hidden Admin Tools",
+      "difficulty": "Intermediate",
+      "time": "2 hours",
+      "topics": [
+        "sys_metadata",
+        "sys_update_xml",
+        "nav_to.do",
+        "cache.do",
+        "stats.do",
+        "xml exports",
+        "list control"
+      ]
+    },
+    {
+      "number": "23",
+      "title": "Administration Best Practices",
+      "difficulty": "Intermediate",
+      "time": "3 hours",
+      "topics": [
+        "governance",
+        "documentation",
+        "testing",
+        "evidence",
+        "rollback",
+        "release discipline",
+        "handover"
+      ]
+    }
+  ]
+}
