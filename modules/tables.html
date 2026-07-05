@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Table Atlas | NowSkill ServiceNow Bible</title>
+  <meta name="description" content="Learn ServiceNow tables, table hierarchy, ACLs, dictionary entries, examples, and common problems.">
+  <link rel="stylesheet" href="../assets/css/nowskill.css">
+  <script defer src="../assets/js/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="topbar">
+    <a class="brand" href="../index.html"><span class="brand-mark">N</span><span><b>NowSkill</b><small>ServiceNow Bible</small></span></a>
+    <nav class="topnav">
+      <a href="../modules/administration.html">Admin</a>
+      <a href="../modules/developer.html">Developer</a>
+      <a href="../modules/cmdb.html">CMDB</a>
+      <a href="../modules/quick-reference.html">Shortcuts</a>
+      <a href="../modules/bible.html">Bible</a>
+    </nav>
+    <button class="cmd" data-open-command>⌘K Search</button>
+  </div>
+  <main id="main" class="page module-page">
+    <section class="module-hero">
+      <div>
+        <p class="eyebrow">▦ Table learning path</p>
+        <h1>Tables, records, ACLs, and dictionary basics</h1>
+        <p>This is the foundation page for understanding what a ServiceNow table is, how records flow through it, how fields are defined, and why ACLs change what users can see or edit.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#what">Start here</a>
+          <a class="btn" href="#acl">ACL checklist</a>
+          <a class="btn" href="#problems">Common problems</a>
+        </div>
+      </div>
+      <aside class="module-stats">
+        <strong>4</strong><span>core ideas</span>
+        <strong>7</strong><span>practical examples</span>
+        <strong>Free</strong><span>study path</span>
+      </aside>
+    </section>
+
+    <section class="split">
+      <div class="glass" id="what">
+        <h2>What a table is</h2>
+        <p>A table is the structure that stores records in ServiceNow. Every task, incident, user, CI, or custom app record lives in a table.</p>
+        <ul class="big-list">
+          <li><code>task</code> is the parent table for work items.</li>
+          <li><code>incident</code> extends <code>task</code> and adds incident-specific fields.</li>
+          <li><code>sys_user</code> stores user records and is used by assignment, roles, approvals, and audit trails.</li>
+          <li><code>cmdb_ci</code> is the base table for configuration items in the CMDB.</li>
+        </ul>
+      </div>
+
+      <div class="glass accent">
+        <h2>How tables are used</h2>
+        <ol>
+          <li>Determine the business object you need to store.</li>
+          <li>Create or choose the right parent table.</li>
+          <li>Add fields in the dictionary with clear names and labels.</li>
+          <li>Control visibility and edit access with ACLs.</li>
+          <li>Expose the data through forms, lists, reports, flows, and APIs.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="split">
+      <div class="glass">
+        <h2 id="dictionary">Dictionary and fields</h2>
+        <p>The dictionary defines the fields on a table, their data types, defaults, reference targets, and whether they are inherited from a parent table.</p>
+        <pre><code>// Example table inspection
+var gr = new GlideRecord('sys_db_object');
+gr.addQuery('name', 'incident');
+gr.query();
+if (gr.next()) {
+  gs.info('Incident table label: ' + gr.getValue('label'));
+}</code></pre>
+      </div>
+
+      <div class="glass">
+        <h2>Examples you should know</h2>
+        <ul class="big-list">
+          <li><code>incident</code> for service desk cases.</li>
+          <li><code>problem</code> for root-cause work.</li>
+          <li><code>change_request</code> for controlled change.</li>
+          <li><code>sc_req_item</code> for catalog fulfillment.</li>
+          <li><code>sys_attachment</code> for files and documents.</li>
+          <li><code>sys_security_acl</code> for access control rules.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="split" id="acl">
+      <div class="glass accent">
+        <h2>ACLs in plain language</h2>
+        <p>ACLs decide who can read, create, write, delete, or execute data and scripts. If a user cannot see a record, update a field, or access an API, an ACL is one of the first things to check.</p>
+        <ol>
+          <li>Check whether the user has the required role.</li>
+          <li>Check whether the table ACL or field ACL exists.</li>
+          <li>Check record conditions and script logic.</li>
+          <li>Check inheritance from parent tables.</li>
+          <li>Verify the behavior as the affected user, not just as admin.</li>
+        </ol>
+      </div>
+
+      <div class="glass">
+        <h2 id="problems">Common problems</h2>
+        <ul class="big-list">
+          <li>Users can open a list but not a record because field ACLs block the form.</li>
+          <li>Records exist but do not appear because the list filter or domain policy is too strict.</li>
+          <li>Custom fields do not show because the dictionary entry was created on the wrong table.</li>
+          <li>Data looks duplicated because the table hierarchy was not planned before extension.</li>
+          <li>Admin sees data that a normal user cannot, because ACLs are bypassed for elevated roles.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="glass">
+      <h2>Practice task</h2>
+      <p>Open <code>incident.list</code>, inspect a record, identify the parent table, check the fields on the form, and then review the ACLs that govern the number, caller, assignment group, and state fields.</p>
+      <p>Try the same workflow on <code>sys_user</code> and <code>cmdb_ci</code> so you can see how table purpose changes the design and access rules.</p>
+    </section>
+
+    <section class="glass">
+      <h2>Related study paths</h2>
+      <ul class="big-list">
+        <li><a href="administration.html">Administration Foundation</a> for platform structure and instance anatomy.</li>
+        <li><a href="developer.html">Core Platform Development</a> for table-driven scripting and app design.</li>
+        <li><a href="quick-reference.html">Quick Reference &amp; Playbooks</a> for shortcuts and fast lookup.</li>
+        <li><a href="cmdb.html">CMDB &amp; CSDM Mastery</a> for CI and relationship modeling.</li>
+      </ul>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div><b>NowSkill ServiceNow Bible</b><p>Free, structured, job-ready ServiceNow learning from administrator to developer to architect.</p></div>
+    <div class="footer-links"><a href="../docs/CONTRIBUTING.md">Contribute</a><a href="../docs/GIT_DEPLOY.md">Deploy</a><a href="../references/The_ServiceNow_Bible_v1.0_Master_Manuscript_Volume0_Ch1_Ch7.pdf">Source manuscript</a></div>
+  </footer>
+  <div class="command-panel" data-command-panel hidden>
+    <div class="command-box">
+      <div class="command-head"><b>Search the Bible</b><button data-close-command>×</button></div>
+      <input data-command-input placeholder="Try: tables, ACL, GlideRecord, HRSD, MID Server">
+      <div data-command-results class="command-results"></div>
+    </div>
+  </div>
+</body>
+</html>
